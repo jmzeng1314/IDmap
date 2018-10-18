@@ -1,0 +1,6 @@
+"Accession","Title","Technology","Taxonomy","Data.Rows","Samples.Count","Series.Count","Contact","Release.Date"
+"GPL13534","Illumina HumanMethylation450 BeadChip (HumanMethylation450_15017482)","oligonucleotide beads","Homo sapiens",485577,81832,1154,"Illumina Inc.","13-May-11"
+"GPL10558","Illumina HumanHT-12 V4.0 expression beadchip","oligonucleotide beads","Homo sapiens",48107,76737,2296,"Illumina Inc.","17-Jun-10"
+"GPL6947","Illumina HumanHT-12 V3.0 expression beadchip","oligonucleotide beads","Homo sapiens",49576,25202,522,"Illumina Inc.","10-Jun-08"
+"GPL8490","Illumina HumanMethylation27 BeadChip (HumanMethylation27_270596_v.1.2)","oligonucleotide beads","Homo sapiens",27578,18805,337,"Illumina Inc.","27-Apr-09"
+"GPL6885","Illumina MouseRef-8 v2.0 expression beadchip","oligonucleotide beads","Mus musculus",25697,15445,808,"Illumina Inc.","21-May-08"
