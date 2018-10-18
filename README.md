@@ -14,5 +14,7 @@
 
 在jimmy个人电脑下载安装了80个bioconductor的芯片相关R包，并且把 3个物种的ID提取成功，具体详见代码。
 
+xiangyujia-已下载GEO数据库的所有GPL信息，并获取了三大公司（Affy ， Agilent，Illumina）的前10%的GPL的信息（物种限定人类，小鼠与大鼠）
+
 
 
