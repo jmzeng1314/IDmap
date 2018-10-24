@@ -1,7 +1,7 @@
 # 程序说明：
 # 提取所有不在bioconductor包中的GPL文件的probe注释信息的probe id 和 gene id 
 # 部分注释文件没有gene id 就以 Gene Symbol替代
-# 本程序也将不在biconductor中的注释和来自bioconductor-package的注释合并成最终注释文件
+# 本程序将不在biconductor中的注释和来自bioconductor-package的注释合并成最终注释文件
 
 #### STEP0 首先读取不在biopack中的gpl-list信息,并且按公司分类进行注释文件的提取(不同公司注释文件格式不同)
 gpl_list <- read.csv("IDmap\\GPL\\gpl_not_in_biopack.csv")
@@ -48,6 +48,7 @@ nrow(a)
 
 # affy的有些注释文件的列是合并的字符串,所以需要我们按"//"分割gene_assignment
 # 例如 gene_assignment列：NR_046018 // DDX11L1 // DEAD/H (Asp-Glu-Ala-Asp/His) box helicase 11 like 1 // 1p36.33 // 100287102 ///
+# install.packages("tidyverse")
 library(tidyverse)
 a_split <- separate(data = a, into = c("refseqID","symbol","name","zz","entrez_id","other"),col = gene_assignment,  sep = "//")
 head(a_split)
@@ -69,7 +70,7 @@ Illumina_probe_result <- data.frame()
 gpl_list_Illumina <- gpl_list[grepl(company[3],gpl_list$Contact),]
 
 ### i = c(1:nrow(gpl_list_Illumina)) , 由于不同注释文件的id列不一样，需要手动设置i，进行文件读取和id选择
-i = 2
+i = 1
 a <- read.csv(paste0('GPL_gene_probe_annotation\\',gpl_list_Illumina[i,1],"_probe_anno.csv")
               ,stringsAsFactors = F)
 head(a)
