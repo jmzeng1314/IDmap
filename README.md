@@ -18,4 +18,9 @@ xiangyujia-已下载GEO数据库的所有GPL信息，并获取了三大公司（
 
 xiangyujia-已下载GPL对应的probe-gene注释信息
 
+xiangyujia-已获取top10 GPL平台的所有注释信息
++ 成功提取probe id和gene id
++ 合并所提取的GPL平台probeid2geneid注释和来自bioconductor包的注释，存放在all_common_probeid2geneid.Rdata中
+
+
 
