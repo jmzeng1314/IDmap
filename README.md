@@ -21,6 +21,8 @@ xiangyujia-已下载GPL对应的probe-gene注释信息
 xiangyujia-已获取top10 GPL平台的所有注释信息
 + 成功提取probe id和gene id
 + 合并所提取的GPL平台probeid2geneid注释和来自bioconductor包的注释，存放在all_common_probeid2geneid.Rdata中
-+ IDmap v1.0版本源码上传，包含1个函数get_geneids，用于annotate probeids to geneids 。函数文档正在完善，其它函数正在编写中
+
+xiangyujia-IDmap v1.0版本源码上传
++ IDmap v1.0版本包含1个函数get_geneids，用于annotate probeids to geneids 。函数文档正在完善，其它函数正在编写中
 
 
