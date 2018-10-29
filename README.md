@@ -20,10 +20,10 @@ xiangyujia-已下载GPL对应的probe-gene注释信息（存放在GPL文件夹�
 
 xiangyujia-已获取top10 GPL平台的所有注释信息（存放在GPL文件夹中）
 + 成功提取probe id和gene id
-+ 合并所提取的GPL平台probeid2geneid注释和来自bioconductor包的注释，存放在all_common_probeid2geneid.Rdata中
++ 合并所提取的GPL平台probeid2geneid注释和来自bioconductor包的注释，存放在all_common_probeid2geneid.Rdata（在IDmap目录下,不是GPL文件夹）中
 + step1,2,3,4 是下载注释，提取id和处理数据的代码
 
-xiangyujia-IDmap v1.0版本源码上传（IDmap_src_v1.0.zip，是未经编译的源码R包）
+xiangyujia-IDmap v1.0版本源码上传（存放在IDmap目录下，IDmap_src_v1.0.zip，是未经编译的源码R包）
 + IDmap v1.0版本包含1个函数get_geneids，用于annotate probeids to geneids 。函数文档正在完善，其它函数正在编写中
 
 
