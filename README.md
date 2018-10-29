@@ -16,5 +16,11 @@
 
 xiangyujia-已下载GEO数据库的所有GPL信息，并获取了三大公司（Affy ， Agilent，Illumina）的前10%的GPL的信息（物种限定人类，小鼠与大鼠）
 
+xiangyujia-已下载GPL对应的probe-gene注释信息
+
+xiangyujia-已获取top10 GPL平台的所有注释信息
++ 成功提取probe id和gene id
++ 合并所提取的GPL平台probeid2geneid注释和来自bioconductor包的注释，存放在all_common_probeid2geneid.Rdata中
+
 
 
