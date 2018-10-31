@@ -28,4 +28,4 @@ xiangyujia-已获取top10 GPL平台的所有注释信息（存放在GPL文件夹
 xiangyujia-IDmap v1.0版本源码上传（存放在IDmap目录下，IDmap_src_v1.0.zip，是未经编译的源码R包）
 + IDmap v1.0版本包含1个函数get_geneids，用于annotate probeids to geneids 。函数文档正在完善，其它函数正在编写中
 
-
+2018-10-31-IDmap v1.0版本更新，可实现基础的probeid注释，编译后可作为R包使用
