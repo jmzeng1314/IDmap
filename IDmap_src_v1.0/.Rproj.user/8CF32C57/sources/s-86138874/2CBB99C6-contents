@@ -1,0 +1,15 @@
+##add gpl info for biocpackage data
+
+add_gpl <- function(anno_data,gpl_biocpack,species,){
+  
+  platform_list <- unique(anno_data$platform)
+  tmp = lapply(platform_list, function(x){
+    tp <- anno_data[anno_data$platform == x,]
+    gpl <- gpl_biocpack[which(gpl_biocpack$bioc_package == x & gpl_biocpack$organism == species),3]
+    tp$gpl <- gpl
+    
+  })
+  
+  return(tmp)
+}
+

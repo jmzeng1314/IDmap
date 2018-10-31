@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540982651820.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1667965180",
+    "id" : "2C34C84",
+    "lastKnownWriteTime" : 1525109107,
+    "last_content_update" : 1525109107,
+    "path" : "F:/学习文件存放地址/课题项目/TF_db/ChIPpeakAnno_3.14.1/ChIPpeakAnno/R/getAnnotation.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "19,47",
+        "scrollLine" : "4"
+    },
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

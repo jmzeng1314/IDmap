@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540794460352.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "273016849",
+    "id" : "C727AEFB",
+    "lastKnownWriteTime" : 1525109107,
+    "last_content_update" : 1525109107,
+    "path" : "F:/学习文件存放地址/课题项目/TF_db/ChIPpeakAnno_3.14.1/ChIPpeakAnno/R/convert2EntrezID.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
