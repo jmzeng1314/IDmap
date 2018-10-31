@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540886663095.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6D9DFAA4",
+    "lastKnownWriteTime" : 7813877730276303717,
+    "last_content_update" : 1540886663095,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "253cb8e295fd4462b3f193b33d8dbc39",
+        "name" : "probeids2geneids",
+        "title" : "probeids2geneids"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540982732851.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1751915574",
+    "id" : "A0EA3740",
+    "lastKnownWriteTime" : 1525109667,
+    "last_content_update" : 1525109667,
+    "path" : "F:/学习文件存放地址/课题项目/TF_db/ChIPseeker_1.16.1/ChIPseeker/R/getGenomicAnnotation.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

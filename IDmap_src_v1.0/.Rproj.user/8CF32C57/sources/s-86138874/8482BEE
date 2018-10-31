@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540798685860.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "221153067",
+    "id" : "8482BEE",
+    "lastKnownWriteTime" : 1525109108,
+    "last_content_update" : 1525109108,
+    "path" : "F:/学习文件存放地址/课题项目/TF_db/ChIPpeakAnno_3.14.1/ChIPpeakAnno/vignettes/ChIPpeakAnno.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "26,32",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

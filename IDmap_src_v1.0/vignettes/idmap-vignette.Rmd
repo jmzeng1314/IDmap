@@ -1,0 +1,110 @@
+---
+title: "The IDmap user's guide"
+author: "Yujia Xiang,Jianming Zeng"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+abstarct: >
+  The package is for annotating chip probe ids to gene ids.
+  It includes functions to get gene ids.
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Quick start
+
+
+# Platform list
+
+|title   |manufacturer         | data_row_count|bioc_package                |
+|:-------------------------------------------------------------------------------------------------------|:--------|:---------------------------------------------------|:--------------------|--------------:|:---------------------------|
+|[MG_U74A] Affymetrix Murine Genome U74A Array                                                           |GPL32    |Mus musculus                                        |Affymetrix           |          12654|mgu74a                      |
+|[MG_U74B] Affymetrix Murine Genome U74B Array                                                           |GPL33    |Mus musculus                                        |Affymetrix           |          12636|mgu74b                      |
+|[MG_U74C] Affymetrix Murine Genome U74C Array                                                           |GPL34    |Mus musculus                                        |Affymetrix           |          12728|mgu74c                      |
+|[AG] Affymetrix Arabidopsis Genome Array                                                                |GPL71    |Arabidopsis thaliana                                |Affymetrix           |           8297|ag                          |
+|[DrosGenome1] Affymetrix Drosophila Genome Array                                                        |GPL72    |Drosophila melanogaster                             |Affymetrix           |          14010|drosgenome1                 |
+|[HC_G110] Affymetrix Human Cancer Array                                                                 |GPL74    |Homo sapiens                                        |Affymetrix           |           2059|hcg110                      |
+|[Mu11KsubA] Affymetrix Murine 11K SubA Array                                                            |GPL75    |Mus musculus                                        |Affymetrix           |           6584|mu11ksuba                   |
+|[Mu11KsubB] Affymetrix Murine 11K SubB Array                                                            |GPL76    |Mus musculus                                        |Affymetrix           |           6595|mu11ksubb                   |
+|[Mu19KsubA] Affymetrix Murine 19K SubA Array                                                            |GPL77    |Mus musculus                                        |Affymetrix           |           7045|mu19ksuba                   |
+|[Mu19KsubB] Affymetrix Murine 19K SubB Array                                                            |GPL78    |Mus musculus                                        |Affymetrix           |           7054|mu19ksubb                   |
+|[Mu19KsubC] Affymetrix Murine 19K SubC Array                                                            |GPL79    |Mus musculus                                        |Affymetrix           |           7047|mu19ksubc                   |
+|[Hu6800] Affymetrix Human Full Length HuGeneFL Array                                                    |GPL80    |Homo sapiens                                        |Affymetrix           |           7129|hu6800                      |
+|[MG_U74Av2] Affymetrix Murine Genome U74A Version 2 Array                                               |GPL81    |Mus musculus                                        |Affymetrix           |          12488|mgu74av2                    |
+|[MG_U74Bv2] Affymetrix Murine Genome U74B Version 2 Array                                               |GPL82    |Mus musculus                                        |Affymetrix           |          12477|mgu74bv2                    |
+|[MG_U74Cv2] Affymetrix Murine Genome U74 Version 2 Array                                                |GPL83    |Mus musculus                                        |Affymetrix           |          11934|mgu74cv2                    |
+|[RG_U34A] Affymetrix Rat Genome U34 Array                                                               |GPL85    |Rattus norvegicus                                   |Affymetrix           |           8799|rgu34a                      |
+|[RG_U34B] Affymetrix Rat Genome U34 Array                                                               |GPL86    |Rattus norvegicus                                   |Affymetrix           |           8791|rgu34b                      |
+|[RG_U34C] Affymetrix Rat Genome U34 Array                                                               |GPL87    |Rattus norvegicus                                   |Affymetrix           |           8789|rgu34c                      |
+|[RN_U34] Affymetrix Rat Neurobiology U34 Array                                                          |GPL88    |Rattus norvegicus                                   |Affymetrix           |           1322|rnu34                       |
+|[RT_U34] Affymetrix Rat Toxicology U34 Array                                                            |GPL89    |Rattus norvegicus                                   |Affymetrix           |           1031|rtu34                       |
+|[YG_S98] Affymetrix Yeast Genome S98 Array                                                              |GPL90    |Saccharomyces cerevisiae                            |Affymetrix           |           9335|ygs98                       |
+|[HG_U95A] Affymetrix Human Genome U95A Array                                                            |GPL91    |Homo sapiens                                        |Affymetrix           |          12626|hgu95av2                    |
+|[HG_U95B] Affymetrix Human Genome U95B Array                                                            |GPL92    |Homo sapiens                                        |Affymetrix           |          12620|hgu95b                      |
+|[HG_U95C] Affymetrix Human Genome U95C Array                                                            |GPL93    |Homo sapiens                                        |Affymetrix           |          12646|hgu95c                      |
+|[HG_U95D] Affymetrix Human Genome U95D Array                                                            |GPL94    |Homo sapiens                                        |Affymetrix           |          12644|hgu95d                      |
+|[HG_U95E] Affymetrix Human Genome U95E Array                                                            |GPL95    |Homo sapiens                                        |Affymetrix           |          12639|hgu95e                      |
+|[HG-U133A] Affymetrix Human Genome U133A Array                                                          |GPL96    |Homo sapiens                                        |Affymetrix           |          22283|hgu133a                     |
+|[HG-U133B] Affymetrix Human Genome U133B Array                                                          |GPL97    |Homo sapiens                                        |Affymetrix           |          22645|hgu133b                     |
+|[Hu35KsubA] Affymetrix Human 35K SubA Array                                                             |GPL98    |Homo sapiens                                        |Affymetrix           |           8934|hu35ksuba                   |
+|[Hu35KsubB] Affymetrix Human 35K SubB Array                                                             |GPL99    |Homo sapiens                                        |Affymetrix           |           8924|hu35ksubb                   |
+|[Hu35KsubC] Affymetrix Human 35K SubC Array                                                             |GPL100   |Homo sapiens                                        |Affymetrix           |           8928|hu35ksubc                   |
+|[Hu35KsubD] Affymetrix Human 35K SubD Array                                                             |GPL101   |Homo sapiens                                        |Affymetrix           |           8928|hu35ksubd                   |
+|[ATH1-121501] Affymetrix Arabidopsis ATH1 Genome Array                                                  |GPL198   |Arabidopsis thaliana                                |Affymetrix           |          22810|ath1121501                  |
+|[Ecoli_ASv2] Affymetrix E. coli Antisense Genome Array                                                  |GPL199   |Escherichia coli K-12                               |Affymetrix           |           7312|ecoli2                      |
+|[Celegans] Affymetrix C. elegans Genome Array                                                           |GPL200   |Caenorhabditis elegans                              |Affymetrix           |          22625|celegans                    |
+|[HG-Focus] Affymetrix Human HG-Focus Target Array                                                       |GPL201   |Homo sapiens                                        |Affymetrix           |           8793|hgfocus                     |
+|[MOE430A] Affymetrix Mouse Expression 430A Array                                                        |GPL339   |Mus musculus                                        |Affymetrix           |          22690|moe430a                     |
+|[MOE430B] Affymetrix Mouse Expression 430B Array                                                        |GPL340   |Mus musculus                                        |Affymetrix           |          22575|mouse4302                   |
+|[RAE230A] Affymetrix Rat Expression 230A Array                                                          |GPL341   |Rattus norvegicus                                   |Affymetrix           |          15923|rae230a                     |
+|[RAE230B] Affymetrix Rat Expression 230B Array                                                          |GPL342   |Rattus norvegicus                                   |Affymetrix           |          15333|rae230b                     |
+|[HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 Array                                            |GPL570   |Homo sapiens                                        |Affymetrix           |          54675|hgu133plus2                 |
+|[HG-U133A_2] Affymetrix Human Genome U133A 2.0 Array                                                    |GPL571   |Homo sapiens                                        |Affymetrix           |          22277|hgu133a2                    |
+|Agilent-011871 Human 1B Microarray G4111A (Feature Number version)                                      |GPL886   |Homo sapiens                                        |Agilent Technologies |          22575|hgug4111a                   |
+|Agilent-012097 Human 1A Microarray (V2) G4110B (Feature Number version)                                 |GPL887   |Homo sapiens                                        |Agilent Technologies |          22575|hgug4110b                   |
+|[Mouse430_2] Affymetrix Mouse Genome 430 2.0 Array                                                      |GPL1261  |Mus musculus                                        |Affymetrix           |          45101|mouse430a2                  |
+|[Xenopus_laevis] Affymetrix Xenopus laevis Genome Array                                                 |GPL1318  |Xenopus laevis                                      |Affymetrix           |          15611|xenopuslaevis               |
+|[Zebrafish] Affymetrix Zebrafish Genome Array                                                           |GPL1319  |Danio rerio                                         |Affymetrix           |          15617|zebrafish                   |
+|[Drosophila_2] Affymetrix Drosophila Genome 2.0 Array                                                   |GPL1322  |Drosophila melanogaster                             |Affymetrix           |          18952|drosophila2                 |
+|[U133_X3P] Affymetrix Human X3P Array                                                                   |GPL1352  |Homo sapiens                                        |Affymetrix           |          61359|u133x3p                     |
+|[Rat230_2] Affymetrix Rat Genome 230 2.0 Array                                                          |GPL1355  |Rattus norvegicus                                   |Affymetrix           |          31099|rat2302                     |
+|Agilent-012391 Whole Human Genome Oligo Microarray G4112A (Feature Number version)                      |GPL1708  |Homo sapiens                                        |Agilent Technologies |          44290|hgug4112a                   |
+|[Bovine] Affymetrix Bovine Genome Array                                                                 |GPL2112  |Bos taurus                                          |Affymetrix           |          24128|bovine                      |
+|[Yeast_2] Affymetrix Yeast Genome 2.0 Array                                                             |GPL2529  |Schizosaccharomyces pombe;	Saccharomyces cerevisiae |Affymetrix           |          10928|yeast2                      |
+|GE Healthcare/Amersham Biosciences CodeLink<U+2122>   UniSet Human 20K I Bioarray                       |GPL2891  |Homo sapiens                                        |GE Healthcare        |          23572|h20kcod                     |
+|GE Healthcare/Amersham Biosciences CodeLink<U+2122>   ADME Rat 16-Assay Bioarray                        |GPL2898  |Rattus norvegicus                                   |GE Healthcare        |           1280|adme16cod                   |
+|[E_coli_2] Affymetrix E. coli Genome 2.0 Array                                                          |GPL3154  |Escherichia coli                                    |Affymetrix           |          10208|ecoli2                      |
+|[Chicken] Affymetrix Chicken Genome Array                                                               |GPL3213  |Gallus gallus                                       |Affymetrix           |          38535|chicken                     |
+|[Porcine] Affymetrix Porcine Genome Array                                                               |GPL3533  |Sus scrofa                                          |Affymetrix           |          24123|porcine                     |
+|[Canine_2] Affymetrix Canine Genome 2.0 Array                                                           |GPL3738  |Canis lupus familiaris                              |Affymetrix           |          43035|canine2                     |
+|[HT_HG-U133A] Affymetrix HT Human Genome U133A Array                                                    |GPL3921  |Homo sapiens                                        |Affymetrix           |          22277|hthgu133a                   |
+|[Canine] Affymetrix Canine Genome 1.0 Array                                                             |GPL3979  |Canis lupus familiaris                              |Affymetrix           |          23913|canine                      |
+|CodeLink UniSet Human I Bioarray                                                                        |GPL4191  |Homo sapiens                                        |GE Healthcare        |          10458|h10kcod                     |
+|[HuEx-1_0-st] Affymetrix Human Exon 1.0 ST Array [probe set (exon) version]                             |GPL5188  |Homo sapiens                                        |Affymetrix           |        1432155|huex10sttranscriptcluster   |
+|Agilent Human 1 cDNA Microarray (G4100A) [layout C]                                                     |GPL5689  |Homo sapiens                                        |Agilent Technologies |          16281|hgug4100a                   |
+|Illumina human-6 v1.0 expression beadchip                                                               |GPL6097  |Homo sapiens                                        |Illumina Inc.        |          47296|illuminaHumanv1             |
+|Illumina human-6 v2.0 expression beadchip                                                               |GPL6102  |Homo sapiens                                        |Illumina Inc.        |          48702|illuminaHumanv2             |
+|[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [transcript (gene) version]                          |GPL6244  |Homo sapiens                                        |Affymetrix           |          33297|hugene10sttranscriptcluster |
+|[MoGene-1_0-st] Affymetrix Mouse Gene 1.0 ST Array [transcript (gene) version]                          |GPL6246  |Mus musculus                                        |Affymetrix           |          35557|mogene10sttranscriptcluster |
+|Illumina MouseRef-8 v2.0 expression beadchip                                                            |GPL6885  |Mus musculus                                        |Illumina Inc.        |          25697|illuminaMousev2             |
+|Illumina HumanHT-12 V3.0 expression beadchip                                                            |GPL6947  |Homo sapiens                                        |Illumina Inc.        |          49576|illuminaHumanv3             |
+|[HG_U95Av2] Affymetrix Human Genome U95 Version 2 Array                                                 |GPL8300  |Homo sapiens                                        |Affymetrix           |          12625|hgu95av2                    |
+|[Mouse430A_2] Affymetrix Mouse Genome 430A 2.0 Array                                                    |GPL8321  |Mus musculus                                        |Affymetrix           |          22690|mouse430a2                  |
+|Illumina HumanHT-12 V4.0 expression beadchip                                                            |GPL10558 |Homo sapiens                                        |Illumina Inc.        |          47323|illuminaHumanv4             |
+|[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [transcript (gene) version]                          |GPL11532 |Homo sapiens                                        |Affymetrix           |          33297|hugene11sttranscriptcluster |
+|Agilent-026652 Whole Human Genome Microarray 4x44K v2 (Probe Name version)                              |GPL13497 |Homo sapiens                                        |Agilent Technologies |          34184|HsAgilentDesign026652       |
+|[HG-U219] Affymetrix Human Genome U219 Array                                                            |GPL13667 |Homo sapiens                                        |Affymetrix           |          49386|hgu219                      |
+|Affymetrix Human Genome U133 Plus 2.0 Array [Brainarray Version 13, HGU133Plus2_Hs_ENTREZG]             |GPL14877 |Homo sapiens                                        |Affymetrix           |          18123|hgu133plus2                 |
+|[HT_HG-U133B] Affymetrix HT Human Genome U133B Array [custom CDF: ENTREZ brainarray v. 14]              |GPL15396 |Homo sapiens                                        |Affymetrix           |           7906|hthgu133b                   |
+|[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array [HuGene10stv1_Hs_ENTREZG_17.0.0]                     |GPL17556 |Homo sapiens                                        |Affymetrix           |          19718|hugene10sttranscriptcluster |
+|[HT_HG-U133A] Affymetrix Human Genome U133A Array (custom CDF: HTHGU133A_Hs_ENTREZG.cdf version 17.0.0) |GPL17897 |Homo sapiens                                        |Affymetrix           |          12092|hthgu133a                   |
+|[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [CDF: Brainarray HuGene11stv1_Hs_ENTREZG_15.1.0]     |GPL18190 |Homo sapiens                                        |Affymetrix           |          19682|hugene11sttranscriptcluster |
+
+
