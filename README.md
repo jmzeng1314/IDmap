@@ -29,3 +29,9 @@ xiangyujia-IDmap v1.0版本源码上传（存放在IDmap目录下，IDmap_src_v1
 + IDmap v1.0版本包含1个函数get_geneids，用于annotate probeids to geneids 。函数文档正在完善，其它函数正在编写中
 
 **2018-10-31** IDmap v1.0版本更新，可实现基础的probeid注释，编译后可作为R包使用
+
+**2018-11-02** IDmap v1.0版本更新
++ 完善probeid注释函数 get_geneids()
++ 增加自动从GEO下载probe注释的函数get_geo()
++ 为来自bioconductor的probe注释增加gpl信息
++ 编译后可作为R包使用
