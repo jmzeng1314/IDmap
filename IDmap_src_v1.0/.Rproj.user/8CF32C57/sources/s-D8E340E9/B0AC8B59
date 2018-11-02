@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541149353659.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B0AC8B59",
+    "lastKnownWriteTime" : 1541150008,
+    "last_content_update" : 1541150008826,
+    "path" : "C:/Users/admin/Desktop/更改platform为gpl.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "0,1",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541160705001.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "42BC65F",
+    "lastKnownWriteTime" : 1540310070,
+    "last_content_update" : 1540310070,
+    "path" : "F:/学习文件存放地址/课题项目/IDmap/上传github代码/step3-download_gpl_probe_annotation.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "15,20",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

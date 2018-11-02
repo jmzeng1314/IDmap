@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_geneids.R
 \name{get_anno_data}
 \alias{get_anno_data}
-\title{get annotation data}
+\title{Get annotation data}
 \usage{
 get_anno_data(spe, biopack_status)
 }
@@ -13,5 +13,5 @@ get_anno_data(spe, biopack_status)
 returns annotation data
 }
 \description{
-get annotation data
+Get annotation data
 }

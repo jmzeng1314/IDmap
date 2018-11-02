@@ -4,10 +4,10 @@
 \alias{get_geneids}
 \title{Mapping gene ids to probe ids}
 \usage{
-get_geneids(probeids, platform, plt.choose = T)
+get_geneids(probeids, gpl)
 }
 \arguments{
-\item{probeids, platform, plt.choose}{if plt.choose is TRUE , then shows the input is gpl ,else is platform}
+\item{probeids, gpl}{}
 }
 \value{
 if the input dataset is in our platform list(save in gpl_list.rda) ,then the output will be a dataframe,
@@ -18,14 +18,14 @@ which includes a list of gene ids mapping to probe ids
 }
 \examples{
 data(package = "IDmap")
-probeids <- c("1000_at","1001_at","1002_f_at")
-platform <- "hcg110"
-geneids <- get_geneids(probeids,platform,plt.choose=F)
+probeids <- c("1053_at","117_at","1316_at")
+platform <- "GPL570"
+geneids <- get_geneids(probeids,gpl)
 head(geneids)
 
 probeids <- c("A_23_P101521","A_33_P3695548","A_33_P3266889")
 platform <- "GPL10332"
-geneids <- get_geneids(probeids,platform,plt.choose=T)
+geneids <- get_geneids(probeids,gpl)
 head(geneids)
-
+#目前存在查找结果冗余的情况
 }
