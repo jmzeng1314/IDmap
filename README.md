@@ -34,4 +34,4 @@ xiangyujia-IDmap v1.0版本源码上传（存放在IDmap目录下，IDmap_src_v1
 + 完善probeid注释函数 get_geneids()
 + 增加自动从GEO下载probe注释的函数get_geo()
 + 为来自bioconductor的probe注释增加gpl信息
-+ 编译后可作为R包使用
++ IDmap_0.1.0.zip windows平台二进制包上传，可安装至R 并正常使用函数
