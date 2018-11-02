@@ -1,6 +1,6 @@
 ########################################
 ##                                    ##
-## code last update: Oct 31, 2018     ##
+## code last update: Dec 02, 2018     ##
 ##                                    ##
 ########################################
 
@@ -9,61 +9,38 @@
 ##'
 ##'
 ##' \code{get_geneids} returns a list of gene ids for the input probe ids
-##' @param probeids,platform,plt.choose
-##' if plt.choose is TRUE , then shows the input is gpl ,else is platform
+##' @param probeids,gpl
 ##'
 ##' @return if the input dataset is in our platform list(save in gpl_list.rda) ,then the output will be a dataframe,
 ##' which includes a list of gene ids mapping to probe ids
 ##'
 ##' @examples
 ##' data(package = "IDmap")
-##' probeids <- c("1000_at","1001_at","1002_f_at")
-##' platform <- "hcg110"
-##' geneids <- get_geneids(probeids,platform,plt.choose=F)
+##' probeids <- c("1053_at","117_at","1316_at")
+##' platform <- "GPL570"
+##' geneids <- get_geneids(probeids,gpl)
 ##' head(geneids)
 ##'
 ##' probeids <- c("A_23_P101521","A_33_P3695548","A_33_P3266889")
 ##' platform <- "GPL10332"
-##' geneids <- get_geneids(probeids,platform,plt.choose=T)
+##' geneids <- get_geneids(probeids,gpl)
 ##' head(geneids)
 ##
 ##'#目前存在查找结果冗余的情况
 ##' @export
-get_geneids <- function (probeids,platform,plt.choose=T) {
+
+get_geneids <- function (probeids,gpl) {
 
   if (missing(probeids)){
     stop("No valid probeids passed in !")
   }
-  if (missing(platform)){
-    stop("No valid platform passed in !")
-  }
-  flag <- check_gpl(platform)
+
+  flag <- check_gpl(gpl)
   if(!flag){
 
     stop("please check your platform is in our gpl list \t
          or you can use function `get_anno_from_geo()` to annotate your probeids")
   }
-
-
-  if(plt.choose){
-  output_data <- get_geneids_from_gpl(probeids,platform)
-  }else{
-  output_data <- get_geneids_from_biocpack(probeids,platform)
-  }
-
-  return(output_data)
-}
-
-
-##' Get_geneids_from_gpl
-##'
-##'
-##' \code{get_geneids} returns a list of gene ids for the input probe ids
-##' @param probeids,gpl
-##'
-##' @return if the input dataset is in our platform list(save in gpl_list.rda) ,then the output will be a dataframe,
-##' which includes a list of gene ids mapping to probe ids
-get_geneids_from_gpl <- function (probeids,gpl) {
 
   tryCatch(utils::data("spe_map", package = "IDmap"))
   spe_map <- get("spe_map")
@@ -76,38 +53,16 @@ get_geneids_from_gpl <- function (probeids,gpl) {
 
   datasets <- get_anno_data(species,biopack_status)
 
-  tmp <- datasets[datasets$platform==gpl,]
+  multimap_gpl <- c("GPL8300","GPL91","GPL570","GPL14877","GPL3921","GPL17897","GPL6244","GPL17556","GPL11532","GPL18190","GPL1261","GPL8321")  #有多个gpl对应同一个biocpack的情况
+  if(gpl %in% multimap_gpl){
+
+  tmp <- datasets[grepl(gpl,datasets$gpl),]
+  }else{
+
+  tmp <- datasets[datasets$gpl==gpl,]
+  }
+
   tmp <- tmp[which(tmp$probe_id %in% probeids),]
-  #output_dat<-data.frame()
-  #output_dat <- output_dat[probe_id = tmp$probe_id,gene_id = tmp$gene_id]
-  return(tmp)
-}
-
-##' Get_geneids_from_biocpack
-##'
-##'
-##' \code{get_geneids} returns a list of gene ids for the input probe ids
-##' @param probeids,gpl
-##'
-##' @return if the input dataset is in our platform list(save in gpl_list.rda) ,then the output will be a dataframe,
-##' which includes a list of gene ids mapping to probe ids
-##'
-get_geneids_from_biocpack <- function (probeids,platform) {
-
-  tryCatch(utils::data("spe_map", package = "IDmap"))
-  spe_map <- get("spe_map")
-
-  gpl_list <- get_gpl_list()
-  spe_name <- gpl_list[gpl_list$bioc_package==platform,3]
-
-  species <- names(which(spe_map==spe_name))
-  biopack_status <- gpl_list[gpl_list$bioc_package==platform,6]
-
-  datasets <- get_anno_data(species,biopack_status)
-
-  tmp <- datasets[datasets$platform==platform,]
-  tmp <- tmp[which(tmp$probe_id %in% probeids),]
-
   #output_dat<-data.frame()
   #output_dat <- output_dat[probe_id = tmp$probe_id,gene_id = tmp$gene_id]
   return(tmp)
@@ -127,7 +82,7 @@ check_gpl <- function(gpl){
   return(flag)
 }
 
-##' get annotation data
+##' Get annotation data
 ##'
 ##'
 ##' @param spe,biocpack_status

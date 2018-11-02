@@ -1,0 +1,12 @@
+#"platform" "title"    "species"  "probe_id" "gene_id"
+
+colnames(human_data_from_gpl)<-c("gpl","title", "species","probe_id","gene_id")
+colnames(mouse_data_from_gpl)<-c("gpl","title", "species","probe_id","gene_id")
+colnames(rat_data_from_gpl)<-c("gpl","title", "species","probe_id","gene_id")
+
+save(human_data_from_gpl,mouse_data_from_gpl,rat_data_from_gpl,file = "F:\\学习文件存放地址\\课题项目\\IDmap\\all_all_probeid2geneid_from_gpl.Rdata")
+
+rm(list = ls())
+load("F:\\学习文件存放地址\\课题项目\\IDmap\\all_all_probeid2geneid_from_gpl.Rdata")
+
+devtools::use_data(human_data_from_gpl,mouse_data_from_gpl,rat_data_from_gpl,overwrite = T)

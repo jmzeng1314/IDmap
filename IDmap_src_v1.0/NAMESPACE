@@ -3,3 +3,5 @@
 export(check_gpl)
 export(get_anno_data)
 export(get_geneids)
+export(get_geo)
+importFrom(GEOquery,getGEO)

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540710714070.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CFB618F7",
+    "lastKnownWriteTime" : 1541159275,
+    "last_content_update" : 1541159275727,
+    "path" : "C:/Users/admin/Desktop/IDmap/R/get_geneids.R",
+    "project_path" : "R/get_geneids.R",
+    "properties" : {
+        "cursorPosition" : "16,13",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

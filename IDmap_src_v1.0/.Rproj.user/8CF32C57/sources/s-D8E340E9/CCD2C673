@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541160920311.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CCD2C673",
+    "lastKnownWriteTime" : 1525109667,
+    "last_content_update" : 1525109667,
+    "path" : "F:/学习文件存放地址/课题项目/TF_db/ChIPseeker_1.16.1/ChIPseeker/R/GEO.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "314,0",
+        "scrollLine" : "298"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
