@@ -1,6 +1,6 @@
 library(Rsubread)
 # 推荐从ENSEMBL上面下载成套的参考基因组fa及基因注释GTF文件
-dir='~/data/project/qiang/release1/Genomes/'
+dir='~/data/project/release1/Genomes/'
 gtf <- file.path(dir,'Homo_sapiens.GRCh38.82.gtf')
 if(!require(refGenome)) install.packages("refGenome")
 # create ensemblGenome object for storing Ensembl genomic annotation data
