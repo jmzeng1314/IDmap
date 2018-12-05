@@ -13,7 +13,7 @@ my_seq <- with(tmp, GRanges(as.character(rname),
                                  IRanges(as.numeric(pos)-60, as.numeric(pos)+60), 
                                  as.character(strand), 
                                  id = as.character(qname)))
-gr3 = intersect(my_seq,my_seq)
+gr3 = intersect(my_seq,my_gr)
 gr3
 o = findOverlaps(my_seq,my_gr)
 o
